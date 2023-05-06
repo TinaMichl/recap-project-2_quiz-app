@@ -17,11 +17,29 @@
       <form data-js="form">
         <fieldset>
           <label for="question">Your question</label>
-          <textarea id="question" name="question"></textarea>
+          <small>(<span data-js="amount-left-1"></span> characters left)</small>
+          <textarea
+            id="question"
+            name="question"
+            maxlength="150"
+            cols="24"
+            rows="3"
+            data-js="your-question-input"
+          ></textarea>
+
           <label for="answer">Your answer</label>
-          <textarea id="answer" name="answer"></textarea>
+          <small>(<span data-js="amount-left-2"></span> characters left)</small>
+          <textarea
+            id="answer"
+            name="answer"
+            maxlength="150"
+            cols="24"
+            rows="3"
+            data-js="your-answer-input"
+          ></textarea>
+
           <label for="input"></label>
-          <input type="text" id="input" name="input" />
+          <input type="text" id="input" name="input" maxlength="150" />
           <button type="submit" name="submit">New card</button>
         </fieldset>
       </form>

@@ -68,3 +68,27 @@ form.addEventListener("submit", (event) => {
 
   event.target.reset();
 });
+
+const yourQuestion = document.querySelector('[data-js="your-question-input"]');
+const yourAnswer = document.querySelector('[data-js="your-answer-input"]');
+const amountLeft1 = document.querySelector('[data-js="amount-left-1"]');
+const amountLeft2 = document.querySelector('[data-js="amount-left-2"]');
+const maxLength = yourQuestion.getAttribute("maxlength");
+
+const updateAmountLeft1 = (value) => {
+  amountLeft1.innerText = value;
+};
+const updateAmountLeft2 = (value) => {
+  amountLeft2.innerText = value;
+};
+
+updateAmountLeft1(maxLength);
+updateAmountLeft2(maxLength);
+
+yourQuestion.addEventListener("input", () => {
+  updateAmountLeft1(maxLength - yourQuestion.value.lenght);
+});
+
+yourAnswer.addEventListener("input", () => {
+  updateAmountLeft2(maxLength - yourAnswer.value.lenght);
+});
